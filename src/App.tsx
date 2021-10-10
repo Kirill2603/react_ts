@@ -1,20 +1,22 @@
 import React from 'react';
+import BodyComponent from "./components/body/bodyComponent";
+import FooterComponent from "./components/footer/footerComponent";
+import NavComponent from "./components/nav/navComponent";
+import HeaderComponent from "./components/header/headerComponent";
 
-function App() {
+const App = () => {
     return (
-      <div>123</div>
+        <div>
+            <HeaderComponent />
+            <NavComponent />
+            <BodyComponent/>
+            <FooterComponent />
+        </div>
+
     );
 }
-type Operation = (a: number, b: number) => number;
 
-function mathOp(x: number, y: number, op: Operation): number{
 
-    return op(x, y);
-}
-let sum: Operation = function(x: number, y: number): number {
-    return x + y;
-};
+export default App
 
-console.log(mathOp(10, 20, sum));
 
-export default App;
