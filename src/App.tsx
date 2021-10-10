@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+      <div>123</div>
+    );
 }
+type Operation = (a: number, b: number) => number;
+
+function mathOp(x: number, y: number, op: Operation): number{
+
+    return op(x, y);
+}
+let sum: Operation = function(x: number, y: number): number {
+    return x + y;
+};
+
+console.log(mathOp(10, 20, sum));
 
 export default App;
