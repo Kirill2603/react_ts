@@ -1,8 +1,9 @@
 import React from 'react';
-import BodyComponent from "./components/body/bodyComponent";
-import FooterComponent from "./components/footer/footerComponent";
-import NavComponent from "./components/nav/navComponent";
-import HeaderComponent from "./components/header/headerComponent";
+import HeaderComponent from "./components/header/HeaderComponent";
+import NavComponent from "./components/nav/NavComponent";
+import BodyComponent from "./components/body/BodyComponent";
+import FooterComponent from "./components/footer/FooterComponent";
+import Style from "./components/style.css"
 
 const App = () => {
     return (
