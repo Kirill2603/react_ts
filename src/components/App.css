@@ -1,7 +1,7 @@
 body {
     padding: 0;
     margin: 0;
-
+    background-color: dimgray;
 }
 
 .App {
@@ -17,18 +17,5 @@ body {
     grid-gap: 10px;
 }
 
-.HeaderComponent {
-    grid-area: h;
-
-}
-
-.NavComponent {
- grid-area: n;
 
 
-}
-
-.BodyComponent {
-    grid-area: b;
-
-}

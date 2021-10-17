@@ -1,0 +1,17 @@
+.HeaderComponent {
+    grid-area: h;
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.HeaderComponent img {
+    height: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.HeaderComponent a {
+    padding-left: 15px;
+    padding-right: 15px;
+}

@@ -1,0 +1,4 @@
+.BodyComponent {
+    grid-area: b;
+    border: 1px solid yellow;
+}
