@@ -1,0 +1,34 @@
+body {
+    padding: 0;
+    margin: 0;
+
+}
+
+.App {
+    width: 80vw;
+    height: 100vh;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas:
+    "h h "
+    "n b ";
+    grid-template-rows: 1fr 15fr;
+    grid-template-columns: 1fr 4fr;
+    grid-gap: 10px;
+}
+
+.HeaderComponent {
+    grid-area: h;
+
+}
+
+.NavComponent {
+ grid-area: n;
+
+
+}
+
+.BodyComponent {
+    grid-area: b;
+
+}
