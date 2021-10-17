@@ -1,0 +1,12 @@
+.PostElement{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+.PostElement img{
+    height: 50px;
+}
+.PostElement div {
+    padding-left: 10px;
+    padding-right: 10px;
+}
