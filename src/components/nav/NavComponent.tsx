@@ -1,13 +1,14 @@
 import React from "react";
-import s from  './NavComponent.module.css'
+import s from './NavComponent.module.css'
+import {NavLink} from "react-router-dom";
 
 const NavComponent = () => {
     return (
         <div className={s.NavComponent}>
-            <a href="/profile">Profile</a>
-            <a href="/messages">Messages</a>
-            <a href="/news">News</a>
-            <a href="/settings">Settings</a>
+            <NavLink to="/profile">Profile</NavLink>
+            <NavLink to="/messages">Messages</NavLink>
+            <NavLink to={"/news"}>News</NavLink>
+            <NavLink to={"/settings"}>Settings</NavLink>
         </div>
     )
 }
