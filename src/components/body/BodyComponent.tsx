@@ -4,15 +4,18 @@ import MessagesPage from "./MessagesPage/MessagesPage";
 import NewsPage from "./NewsPage/NewsPage";
 import ProfilePage from "./ProfilePage/ProfilePage";
 import SettingsPage from "./SettingsPage/SettingsPage";
+import {BrowserRouter, Route} from 'react-router-dom'
 
 const BodyComponent = () => {
     return (
-        <div className={s.BodyComponent}>
-            {/*<MessagesPage />*/}
-            {/*<NewsPage />*/}
-            <ProfilePage />
-            {/*<SettingsPage />*/}
-        </div>
+        <BrowserRouter>
+            <div className={s.BodyComponent}>
+                <Route component={MessagesPage} path='/messages'/>
+                <Route component={NewsPage} path='/news'/>
+                <Route component={ProfilePage} path='/profile'/>
+                <Route component={SettingsPage} path='/settings'/>
+            </div>
+        </BrowserRouter>
     )
 }
 
