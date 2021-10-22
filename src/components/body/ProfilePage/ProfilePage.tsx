@@ -7,8 +7,8 @@ const ProfilePage = () => {
     return (
         <div>
             <ProfileInfo />
-            <ProfilePosts />
             <AddNewPost />
+            <ProfilePosts />
         </div>
     )
 }
