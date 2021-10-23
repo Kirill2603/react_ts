@@ -8,12 +8,12 @@ import {Route} from 'react-router-dom'
 
 const BodyComponent = () => {
     return (
-            <div className={s.BodyComponent}>
-                <Route component={MessagesPage} path='/messages'/>
-                <Route component={NewsPage} path='/news'/>
-                <Route component={ProfilePage} path='/profile'/>
-                <Route component={SettingsPage} path='/settings'/>
-            </div>
+        <div className={s.BodyComponent}>
+            <Route component={MessagesPage} path='/messages'/>
+            <Route component={NewsPage} path='/news'/>
+            <Route component={ProfilePage} path='/profile'/>
+            <Route component={SettingsPage} path='/settings'/>
+        </div>
     )
 }
 

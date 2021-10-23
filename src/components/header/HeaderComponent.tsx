@@ -7,9 +7,11 @@ const HeaderComponent = () => {
     return (
         <div className={s.HeaderComponent}>
             <img src={logo} alt=""/>
-            <a href="">Home</a>
-            <a href="">About</a>
-            <a href="">Contacts</a>
+            <div>
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">Contacts</a>
+            </div>
         </div>
     )
 }
