@@ -1,19 +1,24 @@
 import React from "react";
 import s from './Messages.module.css'
+
 const Messages = () => {
+
+    const messagesdata = [
+        {id: 1, message: "Hi"},
+        {id: 1, message: "How are you"},
+        {id: 1, message: "Yo!"},
+        {id: 1, message: "Yo!!"},
+        {id: 1, message: "Yo!!!"},
+    ]
+
     return (
         <div className={s.messages}>
-            <div>Message 1</div>
-            <div>Message 2</div>
-            <div>Message 3</div>
-            <div>Message 4</div>
-            <div>Message 5</div>
-            <div>Message 6</div>
-            <div>Message 7</div>
-            <div>Message 8</div>
+            <div>{messagesdata[0].message}</div>
+            <div>{messagesdata[1].message}</div>
+            <div>{messagesdata[2].message}</div>
+            <div>{messagesdata[3].message}</div>
+            <div>{messagesdata[4].message}</div>
         </div>
-
-
     )
 }
 
