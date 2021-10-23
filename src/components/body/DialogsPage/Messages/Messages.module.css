@@ -1,0 +1,9 @@
+.messages {
+    font-size: 20px;
+    border-left: 1px solid yellow;
+    padding-left: 10px;
+}
+
+.messages div {
+    padding-bottom: 10px;
+}
