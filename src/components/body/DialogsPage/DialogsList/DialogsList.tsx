@@ -12,13 +12,13 @@ const DialogsList = () => {
         {id: 4, name: 'Harley'},
     ]
 
+    let dialogsElements = dialogsData
+        .map(dialog => <NavLink to={`/dialogs/${dialog.id}`}>{dialog.name}</NavLink>)
+
+
     return (
         <div className={s.dialogsList}>
-            <NavLink to={`/dialogs/${dialogsData[0].id}`}>{dialogsData[0].name}</NavLink>
-            <NavLink to={`/dialogs/${dialogsData[1].id}`}>{dialogsData[1].name}</NavLink>
-            <NavLink to={`/dialogs/${dialogsData[2].id}`}>{dialogsData[2].name}</NavLink>
-            <NavLink to={`/dialogs/${dialogsData[3].id}`}>{dialogsData[3].name}</NavLink>
-            <NavLink to={`/dialogs/${dialogsData[4].id}`}>{dialogsData[4].name}</NavLink>
+            {dialogsElements}
         </div>
     )
 }

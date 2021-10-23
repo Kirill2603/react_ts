@@ -9,11 +9,11 @@ const ProfilePosts = () => {
         {id: 1, postMessage: 'COOL!', likes: 999},
     ]
 
+    let postsDataElements = postsData
+        .map(postMessage => <PostsElement message={postMessage.postMessage} likes={postMessage.likes}/>)
     return (
         <div>
-            <PostsElement message={postsData[0].postMessage} likes={postsData[0].likes}/>
-            <PostsElement message={postsData[1].postMessage} likes={postsData[1].likes}/>
-            <PostsElement message={postsData[2].postMessage} likes={postsData[2].likes}/>
+            {postsDataElements}
         </div>
     )
 }
