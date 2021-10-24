@@ -1,19 +1,17 @@
 import React from "react";
 import s from './DialogsList.module.css'
 import {NavLink} from "react-router-dom";
+import {DialogsType} from "../DialogsPage";
 
-const DialogsList = () => {
+type DialogListPropsType = {
+    data: DialogsType[]
+}
 
-    let dialogsData = [
-        {id: 1, name: 'Batman'},
-        {id: 2, name: 'Joker'},
-        {id: 3, name: 'Robin'},
-        {id: 4, name: 'Riddler'},
-        {id: 4, name: 'Harley'},
-    ]
+const DialogsList = (props: DialogListPropsType) => {
+    debugger
 
-    let dialogsElements = dialogsData
-        .map(dialog => <NavLink to={`/dialogs/${dialog.id}`}>{dialog.name}</NavLink>)
+
+    let dialogsElements = props.data.map(dialog => <NavLink to={`/dialogs/${dialog.id}`}>{dialog.name}</NavLink>)
 
 
     return (
