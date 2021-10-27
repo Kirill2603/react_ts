@@ -1,18 +1,15 @@
 import React from "react";
 import s from './DialogsList.module.css'
 import {NavLink} from "react-router-dom";
-import {DialogsType} from "../DialogsPage";
+import {DialogsType} from "../../../../index";
 
-type DialogListPropsType = {
-    data: DialogsType[]
+type dialogsDataType = {
+    dialogsData: Array<DialogsType>
 }
 
-const DialogsList = (props: DialogListPropsType) => {
-    debugger
+const DialogsList = (props: dialogsDataType) => {
 
-
-    let dialogsElements = props.data.map(dialog => <NavLink to={`/dialogs/${dialog.id}`}>{dialog.name}</NavLink>)
-
+    let dialogsElements = props.dialogsData.map(dialog => <NavLink to={`/dialogs/${dialog.id}`}>{dialog.name}</NavLink>)
 
     return (
         <div className={s.dialogsList}>

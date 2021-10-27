@@ -1,14 +1,13 @@
 import React from "react";
 import s from './Messages.module.css'
-import {MessagesType} from "../DialogsPage";
+import {MessagesType} from "../../../../index";
 
-type MessagesListPropsType = {
-    data: Array<MessagesType>
+type MessagesDataType = {
+    messagesData: Array<MessagesType>
 }
 
-const Messages = (props: MessagesListPropsType) => {
-debugger
-    let messagesDataElements = props.data.map(message => <div>{message.message}</div>)
+const Messages = (props: MessagesDataType) => {
+    let messagesDataElements = props.messagesData.map(message => <div>{message.message}</div>)
 
     return (
         <div className={s.messages}>
