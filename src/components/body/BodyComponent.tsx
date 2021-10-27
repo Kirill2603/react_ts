@@ -5,7 +5,7 @@ import ProfilePage from "./ProfilePage/ProfilePage";
 import SettingsPage from "./SettingsPage/SettingsPage";
 import {Route} from "react-router-dom";
 import DialogsPage from "./DialogsPage/DialogsPage";
-import {profileDataType} from "../../App";
+import {profileDataType} from "../../index";
 
 const BodyComponent = (props: profileDataType) => {
     return (

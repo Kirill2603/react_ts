@@ -9,13 +9,13 @@ type PostsDataType = {
 }
 
 const ProfilePage = (props: PostsDataType) => {
-  return (
-    <div>
-      <ProfileInfo />
-      <AddNewPost />
-      <ProfilePosts postsData={props.postsData} />
-    </div>
-  );
+    return (
+        <div>
+            <ProfileInfo />
+            <AddNewPost />
+            <ProfilePosts postsData={props.postsData} />
+        </div>
+    );
 };
 
 export default ProfilePage;

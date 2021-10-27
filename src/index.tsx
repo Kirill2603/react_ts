@@ -16,6 +16,13 @@ export type PostsType = {
     postMessage: string;
     likes: number;
 };
+export type profileDataType = {
+    profileData: {
+        messagesData: Array<MessagesType>;
+        dialogsData: Array<DialogsType>;
+        postsData: Array<PostsType>;
+    }
+}
 
 const profileData = {
     messagesData: [
@@ -38,8 +45,6 @@ const profileData = {
         { id: 1, postMessage: "COOL!", likes: 999 },
     ]
 };
-
-
 
 ReactDOM.render(
   <React.StrictMode>

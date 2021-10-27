@@ -4,15 +4,7 @@ import NavComponent from "./components/nav/NavComponent";
 import BodyComponent from "./components/body/BodyComponent";
 import "./components/App.css"
 import {BrowserRouter} from "react-router-dom";
-import {DialogsType, MessagesType, PostsType} from "./index";
-
-export type profileDataType = {
-    profileData: {
-        messagesData: Array<MessagesType>;
-        dialogsData: Array<DialogsType>;
-        postsData: Array<PostsType>;
-    }
-}
+import {profileDataType} from "./index";
 
 const App = (props: profileDataType) => {
      return (
@@ -23,7 +15,6 @@ const App = (props: profileDataType) => {
             <BodyComponent profileData={props.profileData}/>
         </div>
         </BrowserRouter>
-
     );
 }
 
