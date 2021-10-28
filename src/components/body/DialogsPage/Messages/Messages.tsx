@@ -1,6 +1,7 @@
 import React from "react";
 import s from './Messages.module.css'
-import {MessagesType} from "../../../../index";
+import {MessagesType} from "../../../../redux/state";
+
 
 type MessagesDataType = {
     messagesData: Array<MessagesType>
@@ -8,7 +9,6 @@ type MessagesDataType = {
 
 const Messages = (props: MessagesDataType) => {
     let messagesDataElements = props.messagesData.map(message => <div>{message.message}</div>)
-
     return (
         <div className={s.messages}>
             {messagesDataElements}
