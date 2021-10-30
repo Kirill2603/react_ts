@@ -28,16 +28,16 @@ const state = {
         { id: 1, message: "Yo!!!" },
     ],
     dialogsData: [
-        { id: 1, name: "Batman" },
-        { id: 2, name: "Joker" },
-        { id: 3, name: "Robin" },
-        { id: 4, name: "Riddler" },
-        { id: 4, name: "Harley" },
+        { id: 1, name: "User 1" },
+        { id: 2, name: "User 2" },
+        { id: 3, name: "User 3" },
+        { id: 4, name: "User 4" },
+        { id: 5, name: "User 5" },
     ],
     postsData: [
-        { id: 1, postMessage: "Batman", likes: 15 },
-        { id: 1, postMessage: "is", likes: 99 },
-        { id: 1, postMessage: "COOL!", likes: 999 },
+        { id: 1, postMessage: "Samurai", likes: 15 },
+        { id: 1, postMessage: "Can do", likes: 99 },
+        { id: 1, postMessage: "Anything!", likes: 999 },
     ]
 };
 

@@ -1,11 +1,6 @@
 import React from "react";
 import s from './navAdditions.module.css'
-import alfredImg from './../navImg/Alfred_batman_tas.png'
-import robinImg from  './../navImg/robin.jpg'
-import catWomanImg from './../navImg/catwoman.jpg'
-import riddlerImg from './../navImg/riddler.jpg'
-import jokerImg from './../navImg/joker.jpg'
-import harleyImg from './../navImg/harley.jpg'
+import userImg from './../../../images/userImg.png'
 
 const NavAdditions = () => {
     return (
@@ -13,31 +8,16 @@ const NavAdditions = () => {
             <h3>Friends</h3>
             <div className={s.elements}>
                 <div className={s.item}>
-                    <img src={alfredImg} alt=""/>
-                    <a>Alfred</a>
+                    <a href=""><img src={userImg} alt=""/></a>
+                    <a>User 1</a>
                 </div>
                 <div className={s.item}>
-                    <img src={robinImg} alt=""/>
-                    <a>Robin</a>
+                    <a href=""><img src={userImg} alt=""/></a>
+                    <a>User 2</a>
                 </div>
                 <div className={s.item}>
-                    <img src={catWomanImg} alt=""/>
-                    <a>Cat</a>
-                </div>
-            </div>
-            <h3>Foes</h3>
-            <div className={s.elements}>
-                <div className={s.item}>
-                    <img src={riddlerImg} alt=""/>
-                    <a>Riddler</a>
-                </div>
-                <div className={s.item}>
-                    <img src={jokerImg} alt=""/>
-                    <a>Joker</a>
-                </div>
-                <div className={s.item}>
-                    <img src={harleyImg} alt=""/>
-                    <a>Harley</a>
+                    <a href=""><img src={userImg} alt=""/></a>
+                    <a>User 3</a>
                 </div>
             </div>
         </div>

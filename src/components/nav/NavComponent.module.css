@@ -1,8 +1,9 @@
 .NavComponent {
     grid-area: n;
-    background-color: yellow;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
+    border-radius: 15px 15px 15px 15px;
 }
 .NavComponent a {
     padding-top: 20px;

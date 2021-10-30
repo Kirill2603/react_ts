@@ -6,7 +6,6 @@ import "./components/App.css"
 import {BrowserRouter} from "react-router-dom";
 import {profileDataType} from "./redux/state";
 
-
 const App = (props: profileDataType) => {
 
      return (
