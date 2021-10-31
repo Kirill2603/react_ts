@@ -4,17 +4,16 @@ import NavComponent from "./components/nav/NavComponent";
 import BodyComponent from "./components/body/BodyComponent";
 import "./components/App.css"
 import {BrowserRouter} from "react-router-dom";
-import {profileDataType} from "./redux/state";
+import {StateType} from "./redux/state";
 import SearchComponent from "./components/searchComponent/searchComponent";
 
-const App = (props: profileDataType) => {
-
+const App = (props: StateType) => {
      return (
         <BrowserRouter>
         <div className="App">
             <HeaderComponent />
             <SearchComponent />
-            <NavComponent />
+            <NavComponent navbarData={props.state.navbarData}/>
             <BodyComponent state={props.state}/>
         </div>
         </BrowserRouter>

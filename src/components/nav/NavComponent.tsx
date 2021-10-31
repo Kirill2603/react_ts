@@ -2,8 +2,15 @@ import React from "react";
 import s from './NavComponent.module.css'
 import {NavLink} from "react-router-dom";
 import NavAdditions from "./navAdditions/navAdditions";
+import {FriendsType} from "../../redux/state";
 
-const NavComponent = () => {
+type NavbarDataType = {
+    navbarData:{
+        friendsList: Array<FriendsType>
+    }
+}
+
+const NavComponent = (props: NavbarDataType) => {
     return (
         <div className={s.NavComponent}>
             <NavLink to="/profile" activeClassName={s.active}>Profile</NavLink>
@@ -11,7 +18,7 @@ const NavComponent = () => {
             <NavLink to="/news" activeClassName={s.active}>News</NavLink>
             <NavLink to="/settings" activeClassName={s.active}>Settings</NavLink>
 
-            <NavAdditions />
+            <NavAdditions friendsList={props.navbarData.friendsList}/>
         </div>
     )
 }
