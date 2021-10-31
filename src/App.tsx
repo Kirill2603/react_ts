@@ -5,6 +5,7 @@ import BodyComponent from "./components/body/BodyComponent";
 import "./components/App.css"
 import {BrowserRouter} from "react-router-dom";
 import {profileDataType} from "./redux/state";
+import SearchComponent from "./components/searchComponent/searchComponent";
 
 const App = (props: profileDataType) => {
 
@@ -12,6 +13,7 @@ const App = (props: profileDataType) => {
         <BrowserRouter>
         <div className="App">
             <HeaderComponent />
+            <SearchComponent />
             <NavComponent />
             <BodyComponent state={props.state}/>
         </div>

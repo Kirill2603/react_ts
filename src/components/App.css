@@ -13,8 +13,9 @@ body {
     display: grid;
     grid-template-areas:
     "h h "
+    "s b"
     "n b ";
-    grid-template-rows: 1fr 15fr;
+    grid-template-rows: 1fr 1fr 15fr;
     grid-template-columns: 1fr 4fr;
     grid-gap: 10px;
 }
