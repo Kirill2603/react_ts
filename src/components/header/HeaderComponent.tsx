@@ -10,9 +10,9 @@ const HeaderComponent = () => {
                 <h1>Kon'nichiwa</h1>
             </div>
                 <div>
-                    <a href="">Home</a>
-                    <a href="">About</a>
-                    <a href="">Contacts</a>
+                    <a href="/#">Home</a>
+                    <a href="/#">About</a>
+                    <a href="/#">Contacts</a>
                     <button>Login</button>
                 </div>
         </div>

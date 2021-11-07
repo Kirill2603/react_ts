@@ -14,7 +14,7 @@ const App = (props: StateType) => {
             <HeaderComponent />
             <SearchComponent />
             <NavComponent navbarData={props.state.navbarData}/>
-            <BodyComponent state={props.state}/>
+            <BodyComponent state={props.state} addPost={props.addPost}/>
         </div>
         </BrowserRouter>
     );

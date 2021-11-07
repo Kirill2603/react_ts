@@ -9,7 +9,7 @@ type NavDataType = {
 
 const NavAdditions = (props: NavDataType)  => {
     let friendItem = props.friendsList.map(item =>
-        <div className={s.item}>
+        <div className={s.item} key={item.id}>
         <img src={userImg} alt=""/>
         <div>{item.name}</div>
     </div>)

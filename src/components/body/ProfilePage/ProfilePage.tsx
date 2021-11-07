@@ -7,14 +7,14 @@ import s from './profilePage.module.css'
 
 type PostsDataType = {
     postsData: Array<PostsType>
+    addPost: (newPostMessage: string)=>void
 }
 
 const ProfilePage = (props: PostsDataType) => {
-
     return (
         <div className={s.profilePage}>
             <ProfileInfo />
-            <AddNewPost />
+            <AddNewPost addPost={props.addPost}/>
             <ProfilePosts postsData={props.postsData} />
         </div>
     );

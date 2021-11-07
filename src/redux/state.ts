@@ -29,7 +29,8 @@ export type StateType = {
         navbarData: {
             friendsList: Array<FriendsType>
         }
-    }
+    },
+    addPost: (newPostMessage: string)=> void
 }
 
 const state = {
@@ -64,5 +65,14 @@ const state = {
         ]
     }
 };
+
+export const addPost = (newPostMessage: string):void => {
+    const newPost: PostsType = {
+        id: 5,
+        postMessage: newPostMessage,
+        likes: 0
+    }
+    state.profilePage.postsData.push(newPost)
+}
 
 export default state

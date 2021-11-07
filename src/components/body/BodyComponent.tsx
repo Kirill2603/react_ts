@@ -16,6 +16,7 @@ const BodyComponent = (props: StateType) => {
                 messagesData={props.state.dialogsPage.messagesData}/>}/>
             <Route path="/news" render={() => <NewsPage/>}/>
             <Route path="/profile" render={() => <ProfilePage
+                addPost={props.addPost}
                 postsData={props.state.profilePage.postsData}/>}/>
             <Route path="/settings" render={() => <SettingsPage/>}/>
         </div>
