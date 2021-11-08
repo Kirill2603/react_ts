@@ -1,3 +1,5 @@
+import {rerenderEntireTree} from "../render";
+
 export type MessagesType = {
     id: number;
     message: string;
@@ -30,17 +32,16 @@ export type StateType = {
             friendsList: Array<FriendsType>
         }
     },
-    addPost: (newPostMessage: string)=> void
+    addPost?: (newPostMessage: string)=> void
 }
 
 const state = {
     dialogsPage: {
         messagesData: [
             {id: 1, message: "Hi"},
-            {id: 1, message: "How are you"},
-            {id: 1, message: "Yo!"},
-            {id: 1, message: "Yo!!"},
-            {id: 1, message: "Yo!!!"},
+            {id: 2, message: "How are you"},
+            {id: 3, message: "Yo!"},
+            {id: 4, message: "Yo!!"},
         ],
         dialogsData: [
             {id: 1, name: "User 1"},
@@ -60,10 +61,10 @@ const state = {
     navbarData:{
         friendsList: [
             {id: 1, name: 'Alex'},
-            {id: 1, name: 'Viktor'},
-            {id: 1, name: 'Ivan'},
+            {id: 2, name: 'Viktor'},
+            {id: 3, name: 'Ivan'},
         ]
-    }
+    },
 };
 
 export const addPost = (newPostMessage: string):void => {
@@ -73,6 +74,8 @@ export const addPost = (newPostMessage: string):void => {
         likes: 0
     }
     state.profilePage.postsData.push(newPost)
+    rerenderEntireTree(state)
 }
+
 
 export default state

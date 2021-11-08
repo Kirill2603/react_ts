@@ -8,7 +8,7 @@ import DialogsPage from "./DialogsPage/DialogsPage";
 import {StateType} from "../../redux/state";
 
 
-const BodyComponent = (props: StateType) => {
+const BodyComponent = (props: StateType | any) => {
     return (
         <div className={s.BodyComponent}>
             <Route path="/dialogs" render={() => <DialogsPage
