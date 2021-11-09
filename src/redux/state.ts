@@ -32,7 +32,7 @@ export type StateType = {
             friendsList: Array<FriendsType>
         }
     },
-    addPost?: (newPostMessage: string)=> void
+    addPost: (newPostMessage: string)=> void
 }
 
 const state = {

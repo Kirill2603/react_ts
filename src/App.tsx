@@ -9,6 +9,7 @@ import SearchComponent from "./components/searchComponent/searchComponent";
 
 
 const App = (props: StateType) => {
+
     return (
         <div className="App">
             <HeaderComponent/>
