@@ -8,7 +8,8 @@ type MessagesDataType = {
 }
 
 const Messages = (props: MessagesDataType) => {
-    let messagesDataElements = props.messagesData.map(message => <div>{message.message}</div>)
+    let messagesDataElements = props.messagesData.map(message =>
+        <div key={message.id}>{message.message}</div>)
     return (
         <div className={s.messages}>
             {messagesDataElements}

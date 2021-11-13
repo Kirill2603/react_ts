@@ -9,7 +9,7 @@ type PostsDataType = {
 
 const ProfilePosts = (props: PostsDataType) => {
   let postsDataElements = props.postsData.map((postMessage) => (
-    <PostsElement message={postMessage.postMessage} likes={postMessage.likes} />
+    <PostsElement message={postMessage.postMessage} likes={postMessage.likes} key={postMessage.id}/>
   ));
   return <div>{postsDataElements}</div>;
 };

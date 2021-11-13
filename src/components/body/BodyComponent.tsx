@@ -7,7 +7,13 @@ import {Route} from "react-router-dom";
 import DialogsPage from "./DialogsPage/DialogsPage";
 import {StateType} from "../../redux/state";
 
-const BodyComponent = (props: StateType) => {
+type PropsType = {
+    state: StateType,
+    addPost: (newPostMessage: string) => void
+    updateNewPostText: (newText: string) => void
+}
+
+const BodyComponent = (props: PropsType) => {
     return (
         <div className={s.BodyComponent}>
             <Route path="/dialogs" render={() => <DialogsPage
@@ -15,6 +21,8 @@ const BodyComponent = (props: StateType) => {
                 messagesData={props.state.dialogsPage.messagesData}/>}/>
             <Route path="/news" render={() => <NewsPage/>}/>
             <Route path="/profile" render={() => <ProfilePage
+                updateNewPostText={props.updateNewPostText}
+                newPostText={props.state.profilePage.newPostText}
                 addPost={props.addPost}
                 postsData={props.state.profilePage.postsData}/>}/>
             <Route path="/settings" render={() => <SettingsPage/>}/>

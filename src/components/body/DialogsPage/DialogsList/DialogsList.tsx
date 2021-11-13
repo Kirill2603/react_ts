@@ -10,7 +10,11 @@ type dialogsDataType = {
 
 const DialogsList = (props: dialogsDataType) => {
 
-    let dialogsElements = props.dialogsData.map(dialog => <NavLink to={`/dialogs/${dialog.id}`}>{dialog.name}</NavLink>)
+    let dialogsElements = props.dialogsData.map(dialog =>
+        <NavLink
+        to={`/dialogs/${dialog.id}`}
+        key={dialog.id}>{dialog.name}
+        </NavLink>)
 
     return (
         <div className={s.dialogsList}>
