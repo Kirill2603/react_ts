@@ -1,28 +1,23 @@
 import React from "react";
-
+import {addPostActionCreator, updateNewPostActionCreator} from "../../../../redux/state";
 
 type addPostType = {
-    addPost: (newPostMessage: string) => void
     newPostText: string
-    updateNewPostText: (newText: string) => void
+    dispatch: ({}: any) => void
 }
 
 const AddNewPost = (props: addPostType) => {
 
-
     let newPostElement = React.createRef<HTMLInputElement>()
 
     let addPost = () => {
-        if (newPostElement.current) {
-            props.addPost(newPostElement.current.value)
-            props.updateNewPostText('')
-        }
+        props.dispatch(addPostActionCreator(props.newPostText))
     }
 
     let onPostChange = () => {
-        let newText: string | any= newPostElement.current?.value
-        console.log(newText)
-        props.updateNewPostText(newText)
+        let text: string | any = newPostElement.current?.value
+        let action = updateNewPostActionCreator(text)
+        props.dispatch(action)
     }
 
     return (

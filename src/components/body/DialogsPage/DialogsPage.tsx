@@ -8,13 +8,19 @@ import {DialogsType, MessagesType} from "../../../redux/state";
 type DialogsPageType = {
     dialogsData: Array<DialogsType>
     messagesData: Array<MessagesType>
+    newMessageText: string
+    dispatch: ({}: any) => void
 }
 
 const DialogsPage = (props: DialogsPageType) => {
     return (
         <div className={s.dialogsPage}>
             <DialogsList dialogsData={props.dialogsData}/>
-            <Messages messagesData={props.messagesData}/>
+            <Messages
+                messagesData={props.messagesData}
+                newMessageText={props.newMessageText}
+                dispatch={props.dispatch}/>
+
         </div>
     );
 };

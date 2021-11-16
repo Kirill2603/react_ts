@@ -9,21 +9,21 @@ import {StateType} from "../../redux/state";
 
 type PropsType = {
     state: StateType,
-    addPost: (newPostMessage: string) => void
-    updateNewPostText: (newText: string) => void
+    dispatch: ({}:any) => void
 }
 
 const BodyComponent = (props: PropsType) => {
     return (
         <div className={s.BodyComponent}>
             <Route path="/dialogs" render={() => <DialogsPage
+                newMessageText={props.state.dialogsPage.newMessageText}
                 dialogsData={props.state.dialogsPage.dialogsData}
+                dispatch={props.dispatch}
                 messagesData={props.state.dialogsPage.messagesData}/>}/>
             <Route path="/news" render={() => <NewsPage/>}/>
             <Route path="/profile" render={() => <ProfilePage
-                updateNewPostText={props.updateNewPostText}
+                dispatch={props.dispatch}
                 newPostText={props.state.profilePage.newPostText}
-                addPost={props.addPost}
                 postsData={props.state.profilePage.postsData}/>}/>
             <Route path="/settings" render={() => <SettingsPage/>}/>
         </div>

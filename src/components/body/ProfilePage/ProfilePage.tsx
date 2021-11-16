@@ -7,9 +7,8 @@ import s from './profilePage.module.css'
 
 type PostsDataType = {
     postsData: Array<PostsType>
-    addPost: (newPostMessage: string)=>void
     newPostText: string
-    updateNewPostText: (newText: string) => void
+    dispatch: ({}:any) => void
 }
 
 const ProfilePage = (props: PostsDataType) => {
@@ -17,8 +16,7 @@ const ProfilePage = (props: PostsDataType) => {
         <div className={s.profilePage}>
             <ProfileInfo />
             <AddNewPost newPostText={props.newPostText}
-                        updateNewPostText={props.updateNewPostText}
-                        addPost={props.addPost}/>
+                        dispatch={props.dispatch}/>
             <ProfilePosts postsData={props.postsData} />
         </div>
     );

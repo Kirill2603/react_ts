@@ -1,3 +1,8 @@
+const ADD_POST: string = 'ADD_POST'
+const UPDATE_NEW_POST_TEXT: string = 'UPDATE_NEW_POST_TEXT'
+const UPDATE_NEW_MESSAGE_TEXT: string = 'UPDATE_NEW_MESSAGE_TEXT'
+const SEND_MESSAGE = 'SEND_MESSAGE'
+
 export type MessagesType = {
     id: number;
     message: string;
@@ -15,12 +20,11 @@ export type FriendsType = {
     id: number;
     name: string
 };
-
-
 export type StateType = {
     dialogsPage: {
         messagesData: Array<MessagesType>;
         dialogsData: Array<DialogsType>;
+        newMessageText: string
     },
     profilePage: {
         postsData: Array<PostsType>;
@@ -47,7 +51,9 @@ let store = {
                 {id: 3, name: "User 3"},
                 {id: 4, name: "User 4"},
                 {id: 5, name: "User 5"},
-            ]
+            ],
+            newMessageText: ''
+
         },
         profilePage: {
             postsData: [
@@ -73,23 +79,60 @@ let store = {
     subscribe(observer: any) {
         this._callSubscriber = observer// Наблюдатель observer / publisher-subscriber
     },
-    addPost(newPostMessage: string): void {
-        const newPost: PostsType = {
-            id: 5,
-            postMessage: newPostMessage,
-            likes: 0
+
+    dispatch(action: any) {
+        if (action.type === ADD_POST) {
+            const newPost: PostsType = {
+                id: 5,
+                postMessage: action.message,
+                likes: 0
+            }
+            this._state.profilePage.postsData.push(newPost)
+            this._state.profilePage.newPostText = ''
+            this._callSubscriber(this._state)
+        } else if (action.type === UPDATE_NEW_POST_TEXT) {
+            this._state.profilePage.newPostText = action.text
+            this._callSubscriber(this._state)
+        } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
+            this._state.dialogsPage.newMessageText = action.message
+            this._callSubscriber(this._state)
+        } else if (action.type === SEND_MESSAGE) {
+            const newMessage = {
+                id: 6,
+                message: this._state.dialogsPage.newMessageText
+            }
+            this._state.dialogsPage.messagesData.push(newMessage)
+            this._state.dialogsPage.newMessageText = ''
+            this._callSubscriber(this._state)
         }
-        this._state.profilePage.postsData.push(newPost)
-        this.updateNewPostText('')
-        this._callSubscriber(this._state)
-    },
-    updateNewPostText(newText: string): void {
-        this._state.profilePage.newPostText = newText
-        this._callSubscriber(this._state)
-    },
+    }
+}
+export const addPostActionCreator = (text: string) => {
+    return {
+        type: ADD_POST,
+        message: text
+    }
+}
 
+export const updateNewPostActionCreator = (text: string) => {
+    return {
+        type: UPDATE_NEW_POST_TEXT,
+        text: text
+    }
+}
 
+export const sendMessageActionCreator = () => {
+    return {
+        type: SEND_MESSAGE
+    }
+}
 
+export const updateNewMessageActionCreator = (message: string) => {
+    return {
+        type: UPDATE_NEW_MESSAGE_TEXT,
+        message: message
+    }
 }
 
 export default store
+
