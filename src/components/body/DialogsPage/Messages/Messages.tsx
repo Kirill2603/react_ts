@@ -1,6 +1,7 @@
 import React from "react";
 import s from './Messages.module.css'
-import {MessagesType, sendMessageActionCreator, updateNewMessageActionCreator} from "../../../../redux/state";
+import {MessagesType, } from "../../../../redux/state";
+import {sendMessageActionCreator, updateNewMessageActionCreator} from "../../../../redux/dialogsReducer";
 
 
 type MessagesDataType = {
