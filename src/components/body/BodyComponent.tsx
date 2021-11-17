@@ -5,7 +5,7 @@ import ProfilePage from "./ProfilePage/ProfilePage";
 import SettingsPage from "./SettingsPage/SettingsPage";
 import {Route} from "react-router-dom";
 import DialogsPage from "./DialogsPage/DialogsPage";
-import {StateType} from "../../redux/state";
+import {StateType} from "../../redux/store";
 
 type PropsType = {
     state: StateType,

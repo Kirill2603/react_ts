@@ -1,13 +1,13 @@
 import React from "react";
 import s from './Messages.module.css'
-import {MessagesType, } from "../../../../redux/state";
+import {ActionsType, MessagesType,} from "../../../../redux/store";
 import {sendMessageActionCreator, updateNewMessageActionCreator} from "../../../../redux/dialogsReducer";
 
 
 type MessagesDataType = {
     messagesData: Array<MessagesType>
     newMessageText: string
-    dispatch: ({}: any) => void
+    dispatch: (action: ActionsType) => void
 }
 
 const Messages = (props: MessagesDataType) => {
@@ -18,7 +18,7 @@ const Messages = (props: MessagesDataType) => {
         props.dispatch(sendMessageActionCreator())
     }
     const onNewMassageChange = (event: any) => {
-        let message = event.target.value
+        let message: string = event.target.value
         props.dispatch(updateNewMessageActionCreator(message))
     }
 

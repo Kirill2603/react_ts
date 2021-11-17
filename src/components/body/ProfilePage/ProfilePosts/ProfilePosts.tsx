@@ -1,6 +1,6 @@
 import React from "react";
 import PostsElement from "./PostElement/PostsElement";
-import {PostsType} from "../../../../redux/state";
+import {PostsType} from "../../../../redux/store";
 
 
 type PostsDataType = {

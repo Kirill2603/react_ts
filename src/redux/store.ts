@@ -1,23 +1,27 @@
-import profileReducer from "./profileReducer";
-import dialogsReducer from "./dialogsReducer";
+import profileReducer, {AddPostActionType, UpdateNewPostActionType} from "./profileReducer";
+import dialogsReducer, {SendMessageActionType, UpdateNewMessageActionType} from "./dialogsReducer";
 
 export type MessagesType = {
     id: number;
     message: string;
 };
+
 export type DialogsType = {
     id: number;
     name: string;
 };
+
 export type PostsType = {
     id: number;
     postMessage: string;
     likes: number;
 };
+
 export type FriendsType = {
     id: number;
     name: string
 };
+
 export type StateType = {
     dialogsPage: {
         messagesData: Array<MessagesType>;
@@ -31,10 +35,19 @@ export type StateType = {
     navbarData: {
         friendsList: Array<FriendsType>
     },
-    //addPost: (newPostMessage: string)=> void
 }
 
-let store = {
+export type StoreType = {
+    _state: StateType
+    _callSubscriber: () => void
+    getState: () => any
+    subscribe: (observer: () => void) => void
+    dispatch: (action: ActionsType) => void
+}
+
+export type ActionsType = AddPostActionType | UpdateNewPostActionType | SendMessageActionType | UpdateNewMessageActionType
+
+let store: StoreType = {
     _state: {
         dialogsPage: {
             messagesData: [
@@ -69,19 +82,18 @@ let store = {
             ]
         },
     },
-    _callSubscriber(state: StateType) {
+    _callSubscriber () {
     },
     getState() {
         return this._state
     },
-    subscribe(observer: any) {
+    subscribe(observer) {
         this._callSubscriber = observer// Наблюдатель observer / publisher-subscriber
     },
-
-    dispatch(action: any) {
+    dispatch(action: ActionsType) {
         this._state.profilePage = profileReducer(this._state.profilePage, action)
         this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action)
-        this._callSubscriber(this._state)
+        this._callSubscriber()
     }
 }
 

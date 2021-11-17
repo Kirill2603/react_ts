@@ -3,22 +3,23 @@ import HeaderComponent from "./components/header/HeaderComponent";
 import NavComponent from "./components/nav/NavComponent";
 import BodyComponent from "./components/body/BodyComponent";
 import "./components/App.css"
-import {StateType} from "./redux/state";
+import {ActionsType, StoreType} from "./redux/store";
 import SearchComponent from "./components/searchComponent/searchComponent";
 
 type PropsType = {
-    state: StateType
-    dispatch: ({}:any) => void
+    store: StoreType
+    dispatch: (action: ActionsType) => void
 }
 
-const App = (props: PropsType) => {
+const App: React.FC<PropsType> = (props) => {
+    const state = props.store.getState()
     return (
         <div className="App">
             <HeaderComponent/>
             <SearchComponent />
-            <NavComponent navbarData={props.state.navbarData}/>
+            <NavComponent navbarData={state.navbarData}/>
             <BodyComponent
-                state={props.state}
+                state={state}
                 dispatch={props.dispatch}/>
         </div>
     );

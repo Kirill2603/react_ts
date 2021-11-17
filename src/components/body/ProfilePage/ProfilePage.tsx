@@ -2,7 +2,7 @@ import React from "react";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import ProfilePosts from "./ProfilePosts/ProfilePosts";
 import AddNewPost from "./AddNewPost/AddNewPost";
-import {PostsType} from "../../../redux/state";
+import {PostsType} from "../../../redux/store";
 import s from './profilePage.module.css'
 
 type PostsDataType = {

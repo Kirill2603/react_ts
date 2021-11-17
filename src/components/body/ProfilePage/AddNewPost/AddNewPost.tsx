@@ -12,7 +12,7 @@ const AddNewPost = (props: addPostType) => {
     let newPostElement = React.createRef<HTMLInputElement>()
 
     let addPost = () => {
-        props.dispatch(addPostActionCreator(props.newPostText))
+        props.dispatch(addPostActionCreator())
     }
 
     let onPostChange = () => {

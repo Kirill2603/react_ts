@@ -1,8 +1,17 @@
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE_NEW_MESSAGE_TEXT'
-const SEND_MESSAGE = 'SEND_MESSAGE'
+import {ActionsType} from "./store";
+
+const UPDATE_NEW_MESSAGE_TEXT: string = 'UPDATE_NEW_MESSAGE_TEXT'
+const SEND_MESSAGE: string = 'SEND_MESSAGE'
+
+export type SendMessageActionType = {
+    type: 'SEND_MESSAGE'
+}
+export type UpdateNewMessageActionType = {
+    type: 'UPDATE_NEW_MESSAGE_TEXT'
+    message: string
+}
 
 const dialogsReducer = (state: any, action: any) => {
-
     switch (action.type) {
         case SEND_MESSAGE:
             const newMessage = {
@@ -18,19 +27,18 @@ const dialogsReducer = (state: any, action: any) => {
         default:
             return state
     }
-
 }
 
-export const sendMessageActionCreator = () => {
+export const sendMessageActionCreator = ():SendMessageActionType => {
     return {
-        type: SEND_MESSAGE
+        type: "SEND_MESSAGE"
     }
 }
 
-export const updateNewMessageActionCreator = (message: string) => {
+export const updateNewMessageActionCreator = (message: string):UpdateNewMessageActionType => {
     return {
-        type: UPDATE_NEW_MESSAGE_TEXT,
-        message: message
+        type: "UPDATE_NEW_MESSAGE_TEXT",
+        message: message,
     }
 }
 

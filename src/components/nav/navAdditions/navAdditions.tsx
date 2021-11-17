@@ -1,7 +1,7 @@
 import React from "react";
 import s from './navAdditions.module.css'
 import userImg from './../../../images/userImg.png'
-import {FriendsType} from "../../../redux/state";
+import {FriendsType} from "../../../redux/store";
 
 type NavDataType = {
     friendsList: Array<FriendsType>
