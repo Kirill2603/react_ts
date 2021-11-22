@@ -1,5 +1,3 @@
-import {ActionsType} from "./store";
-
 const UPDATE_NEW_MESSAGE_TEXT: string = 'UPDATE_NEW_MESSAGE_TEXT'
 const SEND_MESSAGE: string = 'SEND_MESSAGE'
 
