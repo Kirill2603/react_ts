@@ -9,7 +9,16 @@ export type UpdateNewPostActionType = {
     text: string
 }
 
-const profileReducer = (state: any, action: any) => {
+let initialState = {
+    postsData: [
+        {id: 1, postMessage: "Samurai", likes: 15},
+        {id: 2, postMessage: "Can do", likes: 99},
+        {id: 3, postMessage: "Anything!", likes: 999},
+    ],
+    newPostText: ''
+}
+
+const profileReducer = (state = initialState, action: any) => {
     switch (action.type) {
         case ADD_POST:
             const newPost = {
